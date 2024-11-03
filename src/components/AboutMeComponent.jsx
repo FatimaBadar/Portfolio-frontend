@@ -61,7 +61,7 @@ export default function AboutMeComponent() {
               .NET, and Azure. I love exploring new tools, and I’m constantly
               improving my skillset to stay ahead in the field.
             </p>
-            <Image id="profile" src="./src/assets/Linkedin-profile.JPEG" alt="Me" width="308"/>
+            <Image id="profile" src="./src/assets/Linkedin-profile.WebP" alt="Me" width="308"/>
           </div>
         </div>
       </Card>
