@@ -5,10 +5,12 @@ body, html {
   background-color: black;
 }
 
-/* Navbar */
+/*#region Navbar */
 /* initial values  */
 .p-menubar{
   border-color: transparent;
+  position: relative;
+  z-index: 2;
 }
 
 .p-menubar,
@@ -37,19 +39,28 @@ body, html {
   color: #FB6FBB;
   background: black;
 }
+/*#endregion Navbar */
 
-/* Hero section + Spline */
+/*#region Hero section + Spline */
+.spline-wrapper {
+  position: fixed;
+  height: calc(100vh + 1000px);
+  width: 100vw;
+}
+
+.spline{
+  height: 100vh;
+  position: sticky;
+  z-index: 1;
+
+}
+
 .hero-container {
   display: flex;
   align-items: center;
   height: 100vh; 
   position: relative;
   overflow: hidden;
-}
-
-
-.spline {
-  position: absolute;
 }
 
 .hero {
@@ -63,16 +74,7 @@ body, html {
   margin-top: -15vh;
 }
 
-/* Animations */
-
-/* .card-visible {
-  opacity: 1;
-  transform: translateY(0);
-  backdrop-filter: blur(12px);
-  animation-timing-function: ease-in-out;
-  animation-duration: 5s;
-  animation-name: card-animation;
- */
+/*#region Hero sections Animations */
 
 .hero-hidden{
   opacity: 0;
@@ -110,44 +112,6 @@ body, html {
   will-change: opacity, transform, filter;
 }
 
-.about-hidden{
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 2s;
-  will-change: opacity, transform, filter;
-}
-
-.about-visible{
-  opacity: 1;
-  filter: blur(0);
-  transform: translateX(0);
-  transition: all 2s;
-  will-change: opacity, transform, filter;
-}
-
-
-.about-hidden .about-item{
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateY(-15%);
-  /* transform: translateY(100%); */
-  transition: all 2s;
-  will-change: opacity, transform, filter;
-}
-
-.about-visible .about-item{
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  transition: all 2s;
-  will-change: opacity, transform, filter;
-}
-
-.about-item:nth-child(2){
-  transition-delay: 600ms;
-}
-
 .item:nth-child(1) {
   transition-delay: 200ms;
 }
@@ -164,6 +128,7 @@ body, html {
   transition-delay: 800ms;
 }
 
+/*#endregion Hero sections Animations */
 
 
 .main-heading{
@@ -210,10 +175,10 @@ body, html {
   border:unset;
   background-image: linear-gradient(to right top, #051937, #363162, #714789, #b45ba8, #fb6fbb);
 }
-
 /* focus: a25bb491 */
+/*#endregion Hero section + Spline */
 
-/* About me section */
+/*#region About me section */
 .container{
   display: block;
 }
@@ -221,19 +186,19 @@ body, html {
 .about-me{
   display: flex;
   justify-content: center;
+  z-index: 2;
 }
 
 .about-me>.p-card{
-  /* display:block; */
-  /* z-index: 2; */
-  /* position: absolute; */
   margin: 20vh;
   border-radius: 20px;
-  background: rgb(131,126,133);
-  background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);  /* align-items: center; */
+  background: transparent;
+  /* background: rgb(131,126,133); */
+  /* background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);   */
+  /* align-items: center; */
 }
 
-/* About me: left side */
+/*#region About me: left side */
 /* icons */
 .github-linkedin{
   width: 150px;
@@ -241,15 +206,14 @@ body, html {
   justify-content: space-around;
 }
 
-/* detail sections */
 .about-section{
-  width: 90%;
+  width: 100%;
   padding-left: 40px; /* 20px */
   padding-right: 20px;
   background-color: #D9D9D9;
   border-radius: 20px;
   height: 63px;
-  
+
   display: flex;
   align-items: center;
   color: black;
@@ -266,13 +230,72 @@ body, html {
   font-weight:600;
   font-size:medium;
 }
+/*#endregion  About me: left side */
 
-/* About me: Right side */
+/*#region About me: Right side */
 .short-intro{
   color: black;
+  width: 90%;
+  padding-left: 40px;
+  padding-right: 20px;
+  background-color: #D9D9D9;
+  border-radius: 20px;
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #profile img{
   border-radius: 50%;
 }
+/*#endregion About me: Right side */
 
+/*#region About me Animations */
+.about-hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+.about-visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+
+.about-hidden .about-item{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-15%);
+  /* transform: translateY(100%); */
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+.about-visible .about-item{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+.about-item:nth-child(2){
+  transition-delay: 600ms;
+}
+/*#endregion About me Animations */
+
+/*#endregion About me section */
+
+/*#region Projects section*/
+.projects{
+  /* background-color: white; */
+  /* position: ab; */
+  z-index: 2;
+}
+/*#endregion Projects section  */

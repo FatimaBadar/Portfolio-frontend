@@ -5,13 +5,10 @@ import { Button } from "primereact/button";
 import { Image } from 'primereact/image';
         
 export default function AboutMeComponent() {
-  // const { ref, inView } = useInView()
-    // threshold: 0.1,  });
     const { ref, inView } = useInView({
       threshold: 0.2,
     });
   
-    console.log("inView:", inView);
   return (
     <div className="about-me" ref={ref}>
       <Card className={`${inView ? 'about-visible' : 'about-hidden'}`}>
@@ -22,7 +19,7 @@ export default function AboutMeComponent() {
               <a href="https://github.com/FatimaBadar">
                 <i
                   className="pi pi-github"
-                  style={{ color: "black", fontSize: "2.5rem" }}
+                  style={{ color: "white", fontSize: "2.5rem" }}
                 ></i>
               </a>
               <a href="https://www.linkedin.com/in/noor-fatima-qureshi">
