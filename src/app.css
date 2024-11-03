@@ -5,8 +5,6 @@ body, html {
   background-color: black;
 }
 
-
-
 /* Navbar */
 /* initial values  */
 .p-menubar{
@@ -104,6 +102,10 @@ body, html {
   color: white;
 }
 
+.p-button:hover{
+  border:unset;
+  background-image: linear-gradient(to right top, #051937, #363162, #714789, #b45ba8, #fb6fbb);
+}
 /* About me section */
 .container{
   display: block;
