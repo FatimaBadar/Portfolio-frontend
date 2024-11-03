@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Image } from 'primereact/image';
         
 export default function AboutMeComponent() {
-
+  // const { ref, inView } = useInView()
+    // threshold: 0.1,  });
+    const { ref, inView } = useInView({
+      threshold: 0.2,
+    });
+  
+    console.log("inView:", inView);
   return (
-    <div className="about-me">
-      <Card>
+    <div className="about-me" ref={ref}>
+      <Card className={`${inView ? 'about-visible' : 'about-hidden'}`}>
         <div className="flex flex-column md:flex-row">
-          <div className="w-full md:w-6 flex flex-column align-items-center justify-content-center gap-3 py-5 mr-5">
+          <div className="about-item w-full md:w-6 flex flex-column align-items-center justify-content-center gap-3 py-5 mr-5">
             <h2 className="secondary-heading" style={{fontWeight: 800}}>About Me</h2>
             <p className="github-linkedin">
               <a href="https://github.com/FatimaBadar">
@@ -50,7 +57,7 @@ export default function AboutMeComponent() {
               </div>
           </div>
 
-          <div className="w-full md:w-6 flex flex-column align-items-center justify-content-center gap-5 py-5">
+          <div className="about-item w-full md:w-6 flex flex-column align-items-center justify-content-center gap-5 py-5">
             <p className="short-intro">
               I’m a Full Stack Developer passionate about building efficient and
               impactful software solutions using modern technologies like React,
