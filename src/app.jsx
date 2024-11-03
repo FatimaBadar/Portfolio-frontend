@@ -4,7 +4,6 @@ import "./app.css";
 import HeroComponent from "./components/HeroComponent";
 import React from "react";
 import AboutMeComponent from "./components/AboutMeComponent";
-import ProjectsComponent from "./components/ProjectsComponent";
 
 export function App() {
 
@@ -23,7 +22,6 @@ export function App() {
 
         </div>
         <AboutMeComponent />
-        <ProjectsComponent/>
       </div>
     </>
   );
