@@ -3,6 +3,7 @@ body, html {
   padding: 0;
   overflow-x: hidden;
   background-color: black;
+  scroll-behavior: smooth;
 }
 
 /*#region Navbar */
@@ -52,7 +53,6 @@ body, html {
   height: 100vh;
   position: sticky;
   z-index: 1;
-
 }
 
 .hero-container {
@@ -192,9 +192,9 @@ body, html {
 .about-me>.p-card{
   margin: 20vh;
   border-radius: 20px;
-  background: transparent;
-  /* background: rgb(131,126,133); */
-  /* background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);   */
+  /* background: transparent; */
+  background: rgb(131,126,133);
+  background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);  
   /* align-items: center; */
 }
 
@@ -221,7 +221,7 @@ body, html {
   font-size:large; /* medium */
 }
 
-#download-pdf{
+#inner-button{
   background-color: #303263;
   color: white;
   border-radius: 25px;
@@ -234,15 +234,15 @@ body, html {
 
 /*#region About me: Right side */
 .short-intro{
-  color: black;
-  width: 90%;
+  color: white;
+  /* width: 90%;
   padding-left: 40px;
   padding-right: 20px;
   background-color: #D9D9D9;
   border-radius: 20px;
   height: 100%;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 10px; */
 }
 
 #profile img{
@@ -294,8 +294,113 @@ body, html {
 
 /*#region Projects section*/
 .projects{
-  /* background-color: white; */
-  /* position: ab; */
-  z-index: 2;
+  position: relative;
+  z-Index: 2;
+  margin-right:10vh;
+  margin-left: 10vh;
 }
+
+.project-name{
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.project-description{
+  margin-top: 0px;
+  margin-bottom: 0.15rem;
+  /* font-size: 1.8vw;  */
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.carousel{
+  /* background-image: linear-gradient(to bottom, #324a6f, #5e5f8e, #8e74a8, #c188bd, #f49ecc); */
+  /* background-image: linear-gradient(to bottom, #051937, #363162, #714789, #b45ba8, #fb6fbb); */
+  background-color: #D9D9D9;
+  padding: 1.5rem 5%; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.inner-button-carousel{
+  background-color: #303263;
+  color: white;
+  border-radius: 25px;
+  font-weight:600;
+  font-size: 1rem;
+  margin-top: 2rem;
+  white-space: nowrap;
+  /* width: 100%; */
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.inner-button-carousel> .p-button-label{
+  text-align: center;
+}
+
+.inner-button-carousel >.p-button-icon{
+  color: white;
+  background-color: black;
+  border: 3px solid white;
+  border-radius: 50%;
+  font-size: 1.75rem;
+}
+
+.p-carousel-prev .p-carousel-prev-icon,
+.p-carousel-next .p-carousel-next-icon{
+  color: white;
+  height: 100px;
+  width: 100px;
+}
+.p-carousel 
+.p-carousel-indicators 
+.p-carousel-indicator.p-highlight button{
+  background: #303263;
+}
+.p-carousel 
+.p-carousel-indicators .p-carousel-indicator 
+button{
+  border-radius: 10px;
+}
+
+/* Animations */
+.projects-hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+.projects-visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 2s;
+  will-change: opacity, transform, filter;
+}
+
+/* .projects-hidden .item{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(-100%);
+  transition: all 4s;
+  will-change: opacity, transform, filter;
+}
+
+.projects-visible .item{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all 4s;
+  will-change: opacity, transform, filter;
+} */
+
 /*#endregion Projects section  */

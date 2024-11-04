@@ -1,16 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useInView } from "react-intersection-observer";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Image } from 'primereact/image';
-        
+
 export default function AboutMeComponent() {
-    const { ref, inView } = useInView({
-      threshold: 0.2,
-    });
+    const { ref, inView } = useInView({threshold: 0.2, triggerOnce: true });
   
   return (
-    <div className="about-me" ref={ref}>
+    <div className="about-me" ref={ref} id="aboutme">
       <Card className={`${inView ? 'about-visible' : 'about-hidden'}`}>
         <div className="flex flex-column md:flex-row">
           <div className="about-item w-full md:w-6 flex flex-column align-items-center justify-content-center gap-3 py-5 mr-5">
@@ -19,7 +17,7 @@ export default function AboutMeComponent() {
               <a href="https://github.com/FatimaBadar">
                 <i
                   className="pi pi-github"
-                  style={{ color: "white", fontSize: "2.5rem" }}
+                  style={{ color: "black", fontSize: "2.5rem" }}
                 ></i>
               </a>
               <a href="https://www.linkedin.com/in/noor-fatima-qureshi">
@@ -40,16 +38,16 @@ export default function AboutMeComponent() {
               </div>
               <div class="about-section">
                 <p>Phone:</p>
-                <p  style={{paddingLeft: '22%'}}>+64 22 650 8069</p>
+                <p  style={{paddingLeft: '23%'}}>+64 22 650 8069</p>
               </div>
               <div class="about-section">
                 <p>Qualification:</p>
-                <p style={{paddingLeft: '11%'}}>Bachelor's in Computer Science</p>
+                <p style={{paddingLeft: '10%'}}>Bachelor's in Computer Science</p>
               </div>
               <div class="about-section">
                 <p>Resume:</p>
                 <p style={{paddingLeft: '20%'}}>
-                <Button id="download-pdf" type="button" label="DOWNLOAD PDF" />
+                <Button id="inner-button" type="button" label="DOWNLOAD PDF" />
                 </p>
               </div>
           </div>

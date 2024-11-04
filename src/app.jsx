@@ -4,12 +4,13 @@ import "./app.css";
 import HeroComponent from "./components/HeroComponent";
 import React from "react";
 import AboutMeComponent from "./components/AboutMeComponent";
+import ProjectsComponent from "./components/ProjectsComponent";
 
 export function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <div className="container">
         <div className="hero-container">
           <HeroComponent />
@@ -21,7 +22,8 @@ export function App() {
           </div>
 
         </div>
-        <AboutMeComponent />
+        <AboutMeComponent/>
+        <ProjectsComponent/>
       </div>
     </>
   );

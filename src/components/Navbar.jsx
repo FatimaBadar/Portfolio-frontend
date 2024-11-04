@@ -1,4 +1,3 @@
-
 import React from 'react'; 
 import { Menubar } from 'primereact/menubar';
 
@@ -11,7 +10,7 @@ export default function Navbar() {
         {
             label: 'Home',
             icon: 'pi pi-home',
-            url: '/'
+            url: '#hero'
         },
         {
             label: 'About Me',
@@ -21,49 +20,24 @@ export default function Navbar() {
         {
             label: 'Projects',
             icon: 'pi pi-trophy',
-            // items: [
-            //     {
-            //         label: 'Components',
-            //         icon: 'pi pi-bolt'
-            //     },
-            //     {
-            //         label: 'Blocks',
-            //         icon: 'pi pi-server'
-            //     },
-            //     {
-            //         label: 'UI Kit',
-            //         icon: 'pi pi-pencil'
-            //     },
-            //     {
-            //         label: 'Templates',
-            //         icon: 'pi pi-palette',
-            //         items: [
-            //             {
-            //                 label: 'Apollo',
-            //                 icon: 'pi pi-palette'
-            //             },
-            //             {
-            //                 label: 'Ultima',
-            //                 icon: 'pi pi-palette'
-            //             }
-            //         ]
-            //     }
-            // ]
+            url: '#projects'
         },
         {
             label: 'Skills',
-            icon: 'pi pi-star'
+            icon: 'pi pi-star',
+            url: '#skills'
         },
         {
             label: 'Contact',
-            icon: 'pi pi-envelope'
+            icon: 'pi pi-envelope',
+            url: '#contact'
         }
     ];
 
     return (
         <div className="card">
-            <Menubar model={items} />
+            <Menubar model={items} className='menu'/>
+            {/* start={<p style={{paddingRight: '100px'}}>F A T I M A</p>} /> */}
         </div>
     )
-}
-        
+}        

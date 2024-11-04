@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useInView } from "react-intersection-observer";
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 
 export default function HeroComponent() {
-  const { ref, inView } = useInView()
+  const { ref, inView } = useInView({triggerOnce: true})
 
   return (
     <div className="hero" ref={ref} >
-      <Card >
+      <Card id="hero">
         <div className={`items ${inView ? 'hero-visible' : 'hero-hidden'}`}>
         <h1 className="main-heading item">
           FULL STACK
