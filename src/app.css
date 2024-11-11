@@ -182,29 +182,29 @@ body, html {
   
 @media screen and (max-width: 480px) {
   .main-heading {
-    font-size: 4.7vw;
-    line-height:4.4vw;  
+    font-size: 9.7vw;
+    line-height:9.4vw;  
   }
   
   .secondary-heading{
-    margin-top: 8px;
-    font-size: 5.8vw;
-    line-height: 5.8vw;
+    /* margin-top: 0.1vw; */
+    margin-top: -15px;
+    font-size: 7.8vw;
+    line-height: 7.8vw;
   }
 
   .small-text{
-    line-height: 5.8vw;
-    font-size: 3.5vw;
+    line-height: 6.8vw;
+    font-size: 4.5vw;
   }
 
   #hero-button >.p-button{
-    width: 18.5vw;
-    height: 6vw;
+    width: 34.3vw;
+    height: 15vw;
   }
   
   #hero-button >.p-button .p-button-label{
-    font-size: 1.75vw;
-    letter-spacing: 0.1vw;
+    font-size: 3.6vw;
   }
 }
 /* focus: a25bb491 */
