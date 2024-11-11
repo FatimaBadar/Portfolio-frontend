@@ -11,23 +11,23 @@ export default function ProjectsComponent() {
     {
       id: "1",
       name: "OneClicks",
-      description: "Multi-platform Adverstising management tool",
+      description: "Multi-platform Adverstising Management tool",
       image: "OneClicks.JPG",
-      link: "git",
+      link: "https://github.com/FatimaBadar/OneClicks-frontend",
     }, 
     {
       id: "2",
-      name: "OneClicks2",
-      description: "Multi-platform Adverstising management tool",
-      image: "OneClicks.JPG",
-      link: "git",
+      name: "UniRideHub",
+      description: "Carpooling Website",
+      image: "UniRideHub.JPG",
+      link: "https://github.com/FatimaBadar/UniRideHub",
     },
     {
       id: "3",
-      name: "OneClicks3",
-      description: "Multi-platform Adverstising management tool",
+      name: "Restaurant",
+      description: "Restaurant Management portal",
       image: "OneClicks.JPG",
-      link: "git",
+      link: "https://github.com/FatimaBadar/Restaurant-management",
     },
     {
       id: "4",
@@ -80,14 +80,17 @@ export default function ProjectsComponent() {
             src={projects.image}
             // src={`https://primefaces.org/cdn/primereact/images/product/${projects.image}`}
             alt={projects.name}
-            className="w-11 shadow-2 border-3"
+            className="w-11 shadow-2 border-3 border-white"
           />
         </div>
         <div >
           <h2 className="project-name">{projects.name}</h2>
           <h6 className="project-description">{projects.description}</h6>
         </div>
-        <Button className="item inner-button-carousel" type="button" icon='pi pi-github' label="VIEW CODE" />
+        {/* <a href={projects.link}> */}
+        <Button className="item inner-button-carousel"  type="button" icon='pi pi-github' label="VIEW CODE"
+        onClick={() => window.open(projects.link)} />
+        {/* </a> */}
         {/* </div> */}
       </div>
     );

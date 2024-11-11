@@ -5,6 +5,7 @@ import HeroComponent from "./components/HeroComponent";
 import React from "react";
 import AboutMeComponent from "./components/AboutMeComponent";
 import ProjectsComponent from "./components/ProjectsComponent";
+import SkillsComponent from "./components/SkillsComponent";
 
 export function App() {
 
@@ -17,13 +18,14 @@ export function App() {
           <div className="spline-wrapper">
           <Spline
             className="spline"
-            scene="https://prod.spline.design/8rTDsIuCsY4h89f3/scene.splinecode"
+            scene="https://draft.spline.design/2Jn9F9S2SAUvddgI/scene.splinecode"
           />
           </div>
 
         </div>
         <AboutMeComponent/>
         <ProjectsComponent/>
+        <SkillsComponent/>
       </div>
     </>
   );

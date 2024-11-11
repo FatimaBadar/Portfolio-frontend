@@ -47,6 +47,9 @@ body, html {
   position: fixed;
   height: calc(100vh + 1000px);
   width: 100vw;
+  align-self: center;
+    height: 100vh; 
+
 }
 
 .spline{
@@ -57,21 +60,22 @@ body, html {
 
 .hero-container {
   display: flex;
-  align-items: center;
-  height: 100vh; 
   position: relative;
   overflow: hidden;
+  /* height: 100vh;  */
 }
 
 .hero {
   z-index: 2;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
 }
 
 .hero >.p-card{
   background-color: transparent;
   box-shadow: none;
-  margin-left: 20vh;
-  margin-top: -15vh;
+
 }
 
 /*#region Hero sections Animations */
@@ -144,8 +148,8 @@ body, html {
   margin-bottom: -20px;
   color: #444B8C;
   font-size: 40px; 
-  font-weight: 700;
   line-height: 40px;
+  font-weight: 700;
 }
 
 .small-text{
@@ -175,27 +179,58 @@ body, html {
   border:unset;
   background-image: linear-gradient(to right top, #051937, #363162, #714789, #b45ba8, #fb6fbb);
 }
+  
+@media screen and (max-width: 480px) {
+  .main-heading {
+    font-size: 4.7vw;
+    line-height:4.4vw;  
+  }
+  
+  .secondary-heading{
+    margin-top: 8px;
+    font-size: 5.8vw;
+    line-height: 5.8vw;
+  }
+
+  .small-text{
+    line-height: 5.8vw;
+    font-size: 3.5vw;
+  }
+
+  #hero-button >.p-button{
+    width: 18.5vw;
+    height: 6vw;
+  }
+  
+  #hero-button >.p-button .p-button-label{
+    font-size: 1.75vw;
+    letter-spacing: 0.1vw;
+  }
+}
 /* focus: a25bb491 */
 /*#endregion Hero section + Spline */
 
 /*#region About me section */
 .container{
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .about-me{
+  margin-top: 8%;
   display: flex;
   justify-content: center;
   z-index: 2;
+  width: 85%;
+  align-self: center;
 }
 
 .about-me>.p-card{
-  margin: 20vh;
+  margin-bottom: 20vh;
   border-radius: 20px;
-  /* background: transparent; */
-  background: rgb(131,126,133);
-  background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);  
-  /* align-items: center; */
+  background: transparent;
+  /* background: rgb(131,126,133); */
+  /* background: linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%);   */
 }
 
 /*#region About me: left side */
@@ -267,12 +302,10 @@ body, html {
   will-change: opacity, transform, filter;
 }
 
-
 .about-hidden .about-item{
   opacity: 0;
   filter: blur(5px);
   transform: translateY(-15%);
-  /* transform: translateY(100%); */
   transition: all 2s;
   will-change: opacity, transform, filter;
 }
@@ -296,8 +329,8 @@ body, html {
 .projects{
   position: relative;
   z-Index: 2;
-  margin-right:10vh;
-  margin-left: 10vh;
+  width: 85%;
+  align-self: center;
 }
 
 .project-name{
@@ -310,12 +343,13 @@ body, html {
 .project-description{
   margin-top: 0px;
   margin-bottom: 0.15rem;
-  /* font-size: 1.8vw;  */
   font-size: 1.3rem;
   font-weight: 600;
+  height: 45px;
 }
 
 .carousel{
+  /* background-image: linear-gradient(to bottom, #8092af, #999dc1, #b7a6cf, #d7afd8, #f7b9db); */
   /* background-image: linear-gradient(to bottom, #324a6f, #5e5f8e, #8e74a8, #c188bd, #f49ecc); */
   /* background-image: linear-gradient(to bottom, #051937, #363162, #714789, #b45ba8, #fb6fbb); */
   background-color: #D9D9D9;
@@ -336,7 +370,6 @@ body, html {
   font-size: 1rem;
   margin-top: 2rem;
   white-space: nowrap;
-  /* width: 100%; */
   padding-left: 6vw;
   padding-right: 6vw;
 }
@@ -404,3 +437,57 @@ button{
 } */
 
 /*#endregion Projects section  */
+
+/*#region Skills section  */
+.skills{
+  margin-top: 20vh;
+  position: relative;
+  z-index: 2;
+  width: 85%;
+  align-self: center;
+}
+
+.technology-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.1rem;
+}
+
+.type-container{
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-top: 20px;
+}
+
+.tools-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.tertiary-heading{
+  color: white;
+  font-size: 28px;
+  text-align: center;
+}
+
+.tool-box{
+  background: #0F0715;
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tool-box img{
+  width: 70px;
+  height: 70px;
+}
+
+.tech-name{
+  font-size: 15px;
+  color: white;
+  margin: auto;
+}
+/*#endregion Skills section  */

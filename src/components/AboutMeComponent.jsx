@@ -17,7 +17,7 @@ export default function AboutMeComponent() {
               <a href="https://github.com/FatimaBadar">
                 <i
                   className="pi pi-github"
-                  style={{ color: "black", fontSize: "2.5rem" }}
+                  style={{ color: "white", fontSize: "2.5rem" }}
                 ></i>
               </a>
               <a href="https://www.linkedin.com/in/noor-fatima-qureshi">
