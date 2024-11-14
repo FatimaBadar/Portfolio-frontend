@@ -6,6 +6,8 @@ import React from "react";
 import AboutMeComponent from "./components/AboutMeComponent";
 import ProjectsComponent from "./components/ProjectsComponent";
 import SkillsComponent from "./components/SkillsComponent";
+import TechnologyComponent from "./components/TechnologyComponent";
+
 
 export function App() {
 
@@ -25,7 +27,7 @@ export function App() {
         </div>
         <AboutMeComponent/>
         <ProjectsComponent/>
-        <SkillsComponent/>
+        <TechnologyComponent/>
       </div>
     </>
   );

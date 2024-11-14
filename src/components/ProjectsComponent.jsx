@@ -98,8 +98,8 @@ export default function ProjectsComponent() {
 
   return (
     <div className="projects" id="projects">
-      <h2 className="secondary-heading" style={{fontWeight: 800, marginLeft: '9vh'}}>Projects</h2>
-      <p className="small-text"  style={{fontSize: '22px', marginLeft: '9vh', marginTop:'50px', marginBottom:'10px'}}>Some things I’ve built so far</p>
+      <h2 className="secondary-heading" style={{fontWeight: 800, marginLeft: '9vw'}}>Projects</h2>
+      <p className="small-text"  style={{fontSize: '22px', marginLeft: '9vw', marginTop:'50px', marginBottom:'10px'}}>Some things I’ve built so far</p>
        {/* ref={ProjectRef}> */}
       <Carousel
         value={projects}
