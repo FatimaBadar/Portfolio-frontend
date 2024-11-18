@@ -83,7 +83,6 @@ body, html {
 .hero-hidden{
   opacity: 0;
   filter: blur(5px);
-  /* transform: translateX(-100%); */
   transform: translateY(-100%);
   transition: all 2s;
   will-change: opacity, transform, filter;
@@ -92,7 +91,6 @@ body, html {
 .hero-visible{
   opacity: 1;
   filter: blur(0);
-  /* transform: translateX(0); */
   transform: translateY(0);
   transition: all 3s;
   will-change: opacity, transform, filter;
@@ -102,7 +100,6 @@ body, html {
   opacity: 0;
   filter: blur(5px);
   transform: translateX(-100%);
-  /* transform: translateY(-100%); */
   transition: all 1s;
   will-change: opacity, transform, filter;
 }
@@ -111,7 +108,6 @@ body, html {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-  /* transform: translateY(0); */
   transition: all 3s;
   will-change: opacity, transform, filter;
 }
@@ -173,6 +169,11 @@ body, html {
 #contact-me{
   background-color: #303263;
   color: white;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  width: 252.8px;
+  height: 82.16px;
 }
 
 .p-button:hover{
@@ -242,7 +243,7 @@ body, html {
 
 .about-section{
   width: 100%;
-  padding-left: 40px; /* 20px */
+  padding-left: 40px; 
   padding-right: 20px;
   background-color: #D9D9D9;
   border-radius: 20px;
@@ -252,7 +253,7 @@ body, html {
   align-items: center;
   color: black;
   font-weight: bold;
-  font-size:large; /* medium */
+  font-size:large;
 }
 
 #inner-button{
@@ -451,8 +452,12 @@ button{
   align-self: center;
 }
 
-.type-container{
+/* .type-container{
   margin-top: 50px;
+} */
+ul{
+  /* justify-content: center; */
+  padding: unset;
 }
 
 .tools-container{
@@ -471,11 +476,16 @@ button{
 
 .tool-box{
   background: #0F0715;
-  /* padding: 10px 15px; */
   width: 96px;
   height: 96px;
   border-radius: 10px;
   text-align: center;
+
+  
+  
+  box-shadow: 0px 1px 5px #260c38, 
+  0px 0px 2px rgba(0, 0, 0, 0.06), 
+  0px 1px 4px rgba(0, 0, 0, 0.12) !important;
 }
 
 .tool-box:hover{
@@ -493,3 +503,71 @@ button{
   margin: auto;
 }
 /*#endregion Skills section  */
+
+/*#region Contact me section */
+.grid > .col-6 {
+  flex: 1 1 300px; /* Each column takes up at least 300px, but can grow */
+}
+#contact{
+  margin-bottom: 32px;
+  margin-top: 20vh;
+  position: relative;
+  z-index: 2;
+  width: 85%;
+  align-self: center;
+}
+
+.left{
+  margin-top: 10%;
+}
+
+.small-text-contact{
+  color: white;
+  font-size: 20px;
+  margin-top: 50px;
+  line-height:30px
+}
+.contact-form{
+  background: #0F0715;
+  border-radius: 25px;
+}
+
+.p-card.contact-form{
+  box-shadow: 0px 4px 10px #2d2d2e, 
+  0px 0px 2px rgba(0, 0, 0, 0.06), 
+  0px 2px 6px rgba(0, 0, 0, 0.12) !important;
+}
+
+.text-group{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+label{
+  color:#D9D9D9;
+}
+
+.text-box{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#submit-contact{
+  background-color: #303263;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 25px;
+  width: 252.8px;
+  height: 62.16px;
+}
+
+#submit-contact > .pi{
+  font-size:smaller;
+  padding-top: 5px; 
+  padding-left: 20px;
+}
+
+/*#endregion Contact me section */

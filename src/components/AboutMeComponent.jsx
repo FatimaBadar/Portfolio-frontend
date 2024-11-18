@@ -47,8 +47,11 @@ export default function AboutMeComponent() {
               <div class="about-section">
                 <p>Resume:</p>
                 <p style={{paddingLeft: '20%'}}>
-                <Button id="inner-button" type="button" label="DOWNLOAD PDF" />
-                </p>
+                  <a href="Resume.pdf" download="Resume.pdf">
+                <Button id="inner-button" 
+                onClick={() =>  window.open('Resume.pdf')}               
+                icon="pi pi-download" label="DOWNLOAD PDF" />
+                </a></p>
               </div>
           </div>
 

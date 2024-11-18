@@ -23,7 +23,9 @@ export default function HeroComponent() {
           </h2>
           <p className="small-text item">Specializing in React.js and .NET</p>
           <div className="item card flex flex-wrap gap-3" id="hero-button">
-            <Button id="contact-me" type="button" label="CONTACT ME" />
+            <a href="#contact">
+              <Button id="contact-me" label="CONTACT ME" />{" "}
+            </a>
             <Button
               type="button"
               label="LINKEDIN"
