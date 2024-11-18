@@ -26,15 +26,15 @@ export default function ProjectsComponent() {
       id: "3",
       name: "Restaurant",
       description: "Restaurant Management portal",
-      image: "projects/OneClicks.JPG",
+      image: "projects/Restaurant.JPG",
       link: "https://github.com/FatimaBadar/Restaurant-management",
     },
     {
       id: "4",
-      name: "OneClicks4",
-      description: "Multi-platform Adverstising management tool",
-      image: "projects/OneClicks.JPG",
-      link: "git",
+      name: "Fashion Store",
+      description: "E-Commerce website",
+      image: "projects/FashionStore.JPG",
+      link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
     },
   ]);
 

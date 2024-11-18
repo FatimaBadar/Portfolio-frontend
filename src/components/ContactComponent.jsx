@@ -3,7 +3,6 @@ import { Card } from "primereact/card";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
-import { FloatLabel } from "primereact/floatlabel";
 
 export default function ContactComponent() {
   const [firstname, setFirstname] = useState("");
