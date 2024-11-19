@@ -35,8 +35,8 @@ export default function Navbar() {
     ];
 
     return (
-        <div className="card">
-            <Menubar model={items} className='menu'/>
+        <div className="card navbar-card">
+            <Menubar model={items} className="menu"/>
             {/* start={<p style={{paddingRight: '100px'}}>F A T I M A</p>} /> */}
         </div>
     )

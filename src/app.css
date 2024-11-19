@@ -1,17 +1,25 @@
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   background-color: black;
   scroll-behavior: smooth;
 }
 
 /*#region Navbar */
 /* initial values  */
+.navbar-card{
+  overflow: visible;
+  z-index: 3;
+  position: sticky; 
+  top: 0;
+}
+
 .p-menubar{
+  top: 0;
+  z-index: 1000; 
+  width: 100%;  
   border-color: transparent;
   position: relative;
-  z-index: 2;
 }
 
 .p-menubar,
@@ -452,11 +460,27 @@ button{
   align-self: center;
 }
 
-/* .type-container{
-  margin-top: 50px;
-} */
+.small-margin {
+  margin-top: -40px;
+}
+
+@media screen and (max-width: 768px) {
+  .small-margin {
+    padding: 20px;
+  }
+
+  .prog>.tools-container{
+    gap: 1.8rem;
+  }
+  .lg\:col-6>.db{
+    padding-right: 13px;
+  }
+
+}
+
+
 ul{
-  /* justify-content: center; */
+  list-style: none;
   padding: unset;
 }
 
@@ -480,9 +504,6 @@ ul{
   height: 96px;
   border-radius: 10px;
   text-align: center;
-
-  
-  
   box-shadow: 0px 1px 5px #260c38, 
   0px 0px 2px rgba(0, 0, 0, 0.06), 
   0px 1px 4px rgba(0, 0, 0, 0.12) !important;
@@ -506,7 +527,7 @@ ul{
 
 /*#region Contact me section */
 .grid > .col-6 {
-  flex: 1 1 300px; /* Each column takes up at least 300px, but can grow */
+  flex: 1 1 300px; 
 }
 #contact{
   margin-bottom: 32px;

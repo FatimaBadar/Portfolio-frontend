@@ -47,11 +47,11 @@ export default function TechnologyComponent() {
         </h2>
 
         <div
-          className="grid"
+          className="grid justify-content-center"
           style={{ marginTop: "15px", marginLeft: "3%", margin: "auto" }}
         >
-          <div className="lg:col-5 md:col-5 sm:col-7 mt-5">
-            <div>
+          <div className="lg:col-5 md:col-5 sm:col-8">  {/* sm:col-7  */}
+            <div className="prog">
               <h3 className="tertiary-heading">Web Development</h3>
               <ul className="tools-container">
                 {webDev.map((tool, index) => (
@@ -64,9 +64,8 @@ export default function TechnologyComponent() {
             </div>
           </div>
 
-          <div className="lg:col-7 md:col-7 sm:col-5">
-            {/* <div className="grid"> */}
-            <div>
+          <div className="lg:col-7 md:col-7 "> {/* sm:col-5 */}
+            <div className="prog">
               <h3 className="tertiary-heading">Programming Languages</h3>
               <ul className="tools-container">
                 {programming.map((tool, index) => (
@@ -78,10 +77,10 @@ export default function TechnologyComponent() {
               </ul>
             </div>
 
-            <div className="grid">
-              <div className="col">
-                <div>
-                  <h3 className="tertiary-heading">Database Systems</h3>
+            <div className="grid justify-content-center">
+              <div className="lg:col-6 sm:col-6">
+                <div className="prog">
+                  <h3 className="tertiary-heading">Databases</h3>
                   <ul className="tools-container">
                     {database.map((tool, index) => (
                       <li className="tool-box" key={`db-${index}`}>
@@ -93,8 +92,8 @@ export default function TechnologyComponent() {
                 </div>
               </div>
 
-              <div className="col">
-                <div>
+              <div className="lg:col-6 sm:col-6">
+                <div className="prog">
                   <h3 className="tertiary-heading">Data Analytics</h3>
                   <ul className="tools-container">
                     {dataAnalytics.map((tool, index) => (
@@ -107,14 +106,12 @@ export default function TechnologyComponent() {
                 </div>
               </div>
             </div>
-
-            {/* </div> */}
           </div>
         </div>
 
-        <div className="grid ml-5">
-          <div style={{ marginTop: "-40px" }} className="col-5 col-offset-1">
-            <div>
+        <div className="grid ml-5 justify-content-center">
+          <div className="md:col-6 lg:col-6 lg:col-offset-0 small-margin">
+            <div className="prog design">
               <h3 className="tertiary-heading">Design</h3>
               <ul className="tools-container">
                 {design.map((tool, index) => (
@@ -127,8 +124,8 @@ export default function TechnologyComponent() {
             </div>
           </div>
 
-          <div className="col-4" style={{ marginTop: "-40px" }}>
-            <div>
+          <div className="md:col-6 small-margin">
+            <div className="prog">
               <h3 className="tertiary-heading">Cloud/ DevOps</h3>
               <ul className="tools-container">
                 {cloud.map((tool, index) => (
