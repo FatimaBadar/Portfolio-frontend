@@ -21,7 +21,7 @@ export default function ContactComponent() {
     };
 
     await axios
-      .post("https://noorfatimaqureshi-api.vercel.app/api/contactMe", {EmailPayload})
+      .post("https://noorfatimaqureshi-api.vercel.app/contactMe", {EmailPayload})
       .then((response) => {
         console.log("Done", response.data);
       })

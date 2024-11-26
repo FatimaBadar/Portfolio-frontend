@@ -574,6 +574,7 @@ label{
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: 5px;
 }
 #submit-contact{
   background-color: #303263;
@@ -581,6 +582,7 @@ label{
   font-size: 24px;
   font-weight: 600;
   border-radius: 25px;
+  margin-top: 10px;
   width: 252.8px;
   height: 62.16px;
 }
