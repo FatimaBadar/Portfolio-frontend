@@ -594,3 +594,55 @@ label{
 }
 
 /*#endregion Contact me section */
+/* .p-sidebar{
+  background: #0F0715;
+} */
+
+.image-gallery{
+  width: 70%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  /* margin: auto; */
+  overflow: hidden;
+  /* position:static; */
+}
+
+.project-description{
+  margin: 8%;
+  color: white;
+}
+
+.p-galleria-thumbnail-container	{
+  background-color: #260c38;
+}
+
+.p-galleria-item-prev-icon.p-icon, 
+.p-galleria-item-next-icon.p-icon
+{
+  color: #260c38;
+}
+
+/* .project-section{ */
+  /* background: #0F0715; */
+/* } */
+
+.project-section-grid{
+  background: #0F0715;
+  /* height: 50vh; */
+  margin-bottom: 20vh;
+}
+
+.project-section-2{
+  margin:auto;
+}
+
+.project-title{
+    color: #444B8C;
+    font-size: 40px; 
+    line-height: 40px;
+    font-weight: 800;
+}
+.project-description-text{
+  font-size: 24px;
+}
