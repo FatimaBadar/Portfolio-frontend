@@ -3,8 +3,10 @@ import ProjectDescription from '../components/ProjectDescription'
 
 const Projects = () => {
   return (
-    <ProjectDescription/>    
+    <>
+      <ProjectDescription/> 
+    </>
   )
 }
 
-export default Projects
+export default Projects;

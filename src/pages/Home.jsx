@@ -5,12 +5,10 @@ import ProjectsComponent from "../components/ProjectsComponent";
 import TechnologyComponent from "../components/TechnologyComponent";
 import ContactComponent from "../components/ContactComponent";
 import Spline from "@splinetool/react-spline";
-import Navbar from "../components/Navbar";
 
 const Home = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <div className="container">
         <div className="hero-container">
           <HeroComponent />
@@ -21,7 +19,16 @@ const Home = () => {
             />
             <div
               id="overlay"
-              style="position: absolute; bottom: 0; right: 0; width: 158px; height: 57px; border-radius: 15px;background-color: rgba(0, 0, 0, 1); z-index: 10;"
+              style={{
+                position: "absolute",
+                bottom: "0",
+                right: "0",
+                width: "158px",
+                height: "57px",
+                borderRadius: "15px",
+                backgroundColor: "rgba(0, 0, 0, 1)",
+                zIndex: 10,
+              }}
             ></div>
           </div>
         </div>
