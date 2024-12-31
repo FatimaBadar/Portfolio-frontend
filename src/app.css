@@ -608,7 +608,7 @@ label{
   /* position:static; */
 }
 
-.project-description{
+.project-description-page{
   margin: 8%;
   color: white;
 }
@@ -635,6 +635,7 @@ label{
 
 .project-section-2{
   margin:auto;
+  /* line-height: 20px; */
 }
 
 .project-title{
@@ -642,7 +643,27 @@ label{
     font-size: 40px; 
     line-height: 40px;
     font-weight: 800;
+    margin-top: auto;
 }
+
+.project-subheading{
+  font-size: larger; 
+  line-height: 30px;
+  font-weight: 700;
+  margin-top: -25px;
+}
+
 .project-description-text{
-  font-size: 24px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.project-tech, .project-description-heading{
+  line-height: 10px;
+  font-size: 20px;
+}
+.project-technologies{
+  font-size:medium;
+  font-weight: 500;
+  line-height: 7px;
 }

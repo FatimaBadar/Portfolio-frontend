@@ -10,7 +10,7 @@ export default function Navbar() {
         {
             label: 'Home',
             icon: 'pi pi-home',
-            url: '#hero'
+            url: '/'
         },
         {
             label: 'About Me',
@@ -20,7 +20,7 @@ export default function Navbar() {
         {
             label: 'Projects',
             icon: 'pi pi-trophy',
-            url: '#projects'
+            url: '/projects'
         },
         {
             label: 'Skills',

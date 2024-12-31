@@ -10,7 +10,7 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container">
         <div className="hero-container">
           <HeroComponent />

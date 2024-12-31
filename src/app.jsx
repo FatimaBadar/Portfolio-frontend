@@ -10,7 +10,7 @@ export function App() {
   return (
     <>
     <Navbar/>
-        <BrowserRouter>
+    <BrowserRouter>
       <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/projects" element={<Projects/>}/>

@@ -1,41 +1,64 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Button } from "primereact/button";
 import { Galleria } from "primereact/galleria";
 
 const ProjectDescription = () => {
   const [visible, setVisible] = useState(false);
+  // const [projectData, setProjectData] = useState([])
   const [projectData, setProjectData] = useState([
     {
-      id: "1",
+      id: 1,
       title: "OneClicks",
-      description: "Multi-platform Adverstising Management tool",
-      fileName: "projects/OneClicks.JPG",
-      tools: ["Next.js", ".NET", "MongoDB", "PrimeReact", "MaterialUI"],
+      subheading: "Multi-platform Advertising tool",
+      description: "To manage, run, optimize ad campaigns across several platforms like Meta and Google",
+      tool: "Next.js,.NET,MongoDB,PrimeReact,MaterialUI",
       link: "https://github.com/FatimaBadar/OneClicks-frontend",
+      fileName: "projects/OneClicks.JPG"
     },
     {
-      id: "2",
+      id: 2,
       title: "UniRideHub",
-      description: "Carpooling Website",
-      fileName: "projects/UniRideHub.JPG",
-      tools: ["React.js", ".NET", "MySQL", "PrimeReact", "MaterialUI"],
+      subheading: "Carpool Website",
+      description: "For drivers and riders to add up a new ride or book a ride to carpool with someone",
+      tool: "CSS,React.js,.NET,MySQL,MaterialUI",
       link: "https://github.com/FatimaBadar/UniRideHub",
+      fileName: "projects/UniRideHub.JPG"
     },
     {
-      id: "3",
-      title: "Restaurant",
-      description: "Restaurant Management portal",
-      fileName: "projects/Restaurant.JPG",
+      id: 3,
+      title: "Restaurant Management System",
+      subheading: "Management portal",
+      description: "To manage the menu, reservations for employers and customers",
+      tool: "CSS,React.js,MySQL,PHP",
       link: "https://github.com/FatimaBadar/Restaurant-management",
+      fileName: "projects/Restaurant.JPG"
     },
     {
-      id: "4",
+      id: 4,
       title: "Fashion Store",
-      description: "E-Commerce website",
-      fileName: "projects/FashionStore.JPG",
+      subheading: "E-commerce system",
+      description: "To display, buy and sell fashion products by both admin or user",
+      tool: "HTML,CSS,MySQL,PHP",
       link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
-    },
+      fileName: "projects/FashionStore.JPG"
+    }
   ]);
+  
+  useEffect(() => {
+    // getProjectData();
+  }, []);
+
+  const getProjectData = async () => {
+    await axios
+      .get("http://localhost:3000/api/getProjects")
+      .then((response) => {
+        setProjectData(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   const [images, setImages] = useState([
     {
@@ -84,9 +107,6 @@ const ProjectDescription = () => {
     },
   ];
 
-  // useEffect(() => {
-  //         PhotoService.getImages().then(data => setImages(data));
-  // }, []);
   const itemTemplate = (item) => {
     return (
       <img
@@ -116,7 +136,7 @@ const ProjectDescription = () => {
       >
         Projects
       </h2> */}
-      <div className="project-description">
+      <div className="project-description-page">
         {/* <ul style={{ backgroundColor: "white" }}>
         {projectData.map((project, index) => (
           <div key={index}>
@@ -166,19 +186,26 @@ const ProjectDescription = () => {
 
               <div className="project-section-2 md:col-5 sm:col-12">
                 <h2 className="project-title">{project.title}</h2>
+                <p className="project-subheading">
+                  {project.subheading}
+                </p>
+                <div>
+                <h3 className="project-description-heading">Description:</h3>
                 <p className="project-description-text">
                   {project.description}
                 </p>
-
+                </div>
                 <div>
                   <h3 className="project-tech">Technologies Used:</h3>
-                  {project.tools?.map((tool, i) => (
+                  { project.tool? (
+                  project.tool.split(",").map((tool, i) => (
                     <ul key={i}>
                       <li>
-                        <p>{tool}</p>
+                        <p className="project-technologies">{tool}</p>
                       </li>
                     </ul>
-                  ))}
+                  )) 
+                ) : ("")}
                 </div>
               </div>
             </ul>
