@@ -4,8 +4,11 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
 import axios from "axios";
+import { useInView } from "react-intersection-observer";
 
 export default function ContactComponent() {
+  const { ref, inView } = useInView({threshold: 0.2, triggerOnce: true });
+
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -32,11 +35,11 @@ export default function ContactComponent() {
   };
 
   return (
-    <>
-      <div className="grid" id="contact">
-        <div className="col-6 left">
+    <div ref={ref} id="contact">
+      <div className={`grid ${inView ? 'about-visible' : 'about-hidden'}`}>
+        <div className="about-item col-6 left">
           <h2
-            className="secondary-heading"
+            className="about-item secondary-heading"
             style={{
               fontWeight: 900,
               letterSpacing: "2px",
@@ -51,7 +54,7 @@ export default function ContactComponent() {
             Fill out the form or email me at fatimabadarq@gmail.com
           </p>
         </div>
-        <Card className="col-6 col-offset-0 contact-form shadow-2">
+        <Card className="about-item col-6 col-offset-0 contact-form shadow-2">
           <div className="flex flex-column gap-3 py-4">
             <form onSubmit={SubmitContactForm}>
               <div className="text-group">
@@ -111,18 +114,8 @@ export default function ContactComponent() {
             </form>
           </div>
         </Card>
+        </div>
       </div>
-
-      {/* <div className="p-inputgroup flex-1">
-              <span className="p-inputgroup-addon">
-                <i className="pi pi-user"></i>
-              </span>
-              <InputText
-              id="firstname"
-              value={firstname}
-              onChange={(e) => setValue(e.target.value)}
-            />
-            </div> */}
-    </>
+    // </>
   );
 }

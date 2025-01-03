@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, HashRouter } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 
 export default function Navbar() {
@@ -7,6 +7,22 @@ export default function Navbar() {
     const location = useLocation();
 
     const handleNavigation = (path) => {
+        if(path==='/' && location.pathname!== '/projects' && location.hash.length!=0){
+            if (location.pathname === path) {
+                const element = document.querySelector("#hero");
+                if (element) {
+                    HashRouter('#hero')
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            } 
+        }
+        if (location.pathname === path) {
+            const element = document.querySelector("#hero");
+            if (element) {
+                HashRouter('#hero')
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } 
         if(location.pathname !== path){
             navigate(path);
         }
@@ -15,7 +31,8 @@ export default function Navbar() {
     const items = [
         {
             label: 'F A T I M A',
-            command: () => handleNavigation('/')
+            command: () => handleNavigation('/'),
+            visible: location.pathname === "/" || location.pathname === "/projects",
         },
         {
             label: 'Home',

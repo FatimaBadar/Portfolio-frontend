@@ -432,7 +432,7 @@ button{
   will-change: opacity, transform, filter;
 }
 
-/* .projects-hidden .item{
+.projects-hidden .item{
   opacity: 0;
   filter: blur(5px);
   transform: translateY(-100%);
@@ -446,7 +446,7 @@ button{
   transform: translateY(0);
   transition: all 4s;
   will-change: opacity, transform, filter;
-} */
+} 
 
 /*#endregion Projects section  */
 
@@ -629,10 +629,20 @@ label{
 
 .project-section-grid{
   background: #0F0715;
-  /* height: 50vh; */
+ /* height: 50vh; */
   margin-bottom: 20vh;
+  border-radius: 25px;
+  box-shadow: 
+  0px 1px 5px #260c38, 
+  0px 0px 2px rgba(0, 0, 0, 0.06), 
+  0px 1px 4px rgba(0, 0, 0, 0.12) !important;
+  /* 0px 4px 10px #2d2d2e,  */
+  /* 0px 0px 2px rgba(0, 0, 0, 0.06),  */
+  /* 0px 2px 6px rgba(0, 0, 0, 0.12) !important; */
 }
-
+.project-section-grid:hover{
+  background-image: linear-gradient(to right top, #051937, #363162, #714789, #b45ba8, #fb6fbb);
+}
 .project-section-2{
   margin:auto;
   /* line-height: 20px; */

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import { useInView } from "react-intersection-observer";
+import { useInView } from "react-intersection-observer";
 import { Button } from "primereact/button";
 import { Carousel } from "primereact/carousel";
 import axios from "axios";
 
 const ProjectsComponent= () =>{
-  // const { ref: ProjectRef, inView } = useInView(
-  //   {threshold: 0.1, triggerOnce: true });
+  const { ref: ProjectRef, inView } = useInView();
+    // {threshold: 0.1, triggerOnce: true });
   // const [projectData, setProjectData] = useState([]);
   const [projectData, setProjectData] = useState([
     {
@@ -86,8 +86,8 @@ const ProjectsComponent= () =>{
 
   const productTemplate = (projects) => {
     return (
-      // <div className={`items carousel border-1 surface-border border-round ${inView ? 'projects-visible' : 'projects-hidden'}`}>
-      <div className="carousel border-1 surface-border border-round">
+      <div className={`items carousel border-1 surface-border border-round ${inView ? 'projects-visible' : 'projects-hidden'}`}>
+      {/* //  <div className="item carousel border-1 surface-border border-round">  */}
         {/* <div className="item"> */}
         <div className="mb-3">
           <img
@@ -115,15 +115,16 @@ const ProjectsComponent= () =>{
   };
 
   return (
-    <div className="projects" id="projects">
+    <div className="projects" id="projects"
+    ref={ProjectRef}>
       <h2
-        className="secondary-heading"
+        className={`items secondary-heading ${inView ? 'projects-visible' : 'projects-hidden'}`}
         style={{ fontWeight: 800, marginLeft: "9vw" }}
       >
         Projects
       </h2>
       <p
-        className="small-text"
+        className={`items small-text ${inView ? 'projects-visible' : 'projects-hidden'}`}
         style={{
           fontSize: "22px",
           marginLeft: "9vw",
@@ -133,7 +134,6 @@ const ProjectsComponent= () =>{
       >
         Some things I’ve built so far
       </p>
-            {/* ref={ProjectRef}> */}
       <Carousel
         value={projectData}
         numVisible={3}
