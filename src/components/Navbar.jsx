@@ -1,42 +1,60 @@
 import React from 'react'; 
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menubar } from 'primereact/menubar';
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleNavigation = (path) => {
+        if(location.pathname !== path){
+            navigate(path);
+        }
+    }
+
     const items = [
         {
             label: 'F A T I M A',
-            url: '/'
+            command: () => handleNavigation('/')
         },
         {
             label: 'Home',
             icon: 'pi pi-home',
-            url: '/'
+            command: () => handleNavigation('/'),
+            visible: location.pathname === "/" || location.pathname === "/projects",
         },
         {
             label: 'About Me',
             icon: 'pi pi-user',
-            url: '#aboutme'
+            url: '/#aboutme',
+            visible: location.pathname === "/"
         },
         {
             label: 'Projects',
             icon: 'pi pi-trophy',
-            url: '/projects'
+            command: () => handleNavigation('/projects'),
+            visible: location.pathname === "/" || location.pathname === "/projects",
+
         },
         {
             label: 'Skills',
             icon: 'pi pi-star',
-            url: '#skills'
+            url: '/#skills',
+            visible: location.pathname === "/"
         },
         {
             label: 'Contact',
             icon: 'pi pi-envelope',
-            url: '#contact'
+            url: '/#contact',
+            visible: location.pathname === "/"
         }
     ];
 
+    const visibleItems = items.filter(item => item.visible !== false);
+
     return (
         <div className="card navbar-card">
-            <Menubar model={items} className="menu"/>
+            <Menubar model={visibleItems} className="menu"/>
             {/* start={<p style={{paddingRight: '100px'}}>F A T I M A</p>} /> */}
         </div>
     )
