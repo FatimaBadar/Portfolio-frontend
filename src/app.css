@@ -594,23 +594,21 @@ label{
 }
 
 /*#endregion Contact me section */
-/* .p-sidebar{
-  background: #0F0715;
-} */
-
 .image-gallery{
   width: 70%;
   height: 75%;
   display: flex;
   justify-content: center;
-  /* margin: auto; */
   overflow: hidden;
-  /* position:static; */
+  margin-top: 10px;
 }
 
 .project-description-page{
-  margin: 8%;
-  color: white;
+  color: #ccc3c3;
+  padding-top: 80px;
+  margin-left: 8%;
+  margin-right: 8%;
+  padding-bottom: 10px;
 }
 
 .p-galleria-thumbnail-container	{
@@ -623,57 +621,61 @@ label{
   color: #260c38;
 }
 
-/* .project-section{ */
-  /* background: #0F0715; */
-/* } */
-
 .project-section-grid{
   background: #0F0715;
- /* height: 50vh; */
-  margin-bottom: 20vh;
+  margin-bottom: 10vh;
   border-radius: 25px;
   box-shadow: 
-  0px 1px 5px #260c38, 
+  0px 6px 15px #260c38, 
   0px 0px 2px rgba(0, 0, 0, 0.06), 
   0px 1px 4px rgba(0, 0, 0, 0.12) !important;
-  /* 0px 4px 10px #2d2d2e,  */
-  /* 0px 0px 2px rgba(0, 0, 0, 0.06),  */
-  /* 0px 2px 6px rgba(0, 0, 0, 0.12) !important; */
+  /* 0px 4px 10px #2d2d2e, 
+  0px 0px 2px rgba(0, 0, 0, 0.06), 
+  0px 2px 6px rgba(0, 0, 0, 0.12) !important; */
+
+  padding: 25px;
 }
-.project-section-grid:hover{
+
+/* .project-section-grid:hover{
   background-image: linear-gradient(to right top, #051937, #363162, #714789, #b45ba8, #fb6fbb);
-}
+} */
+
 .project-section-2{
   margin:auto;
-  /* line-height: 20px; */
 }
 
 .project-title{
-    color: #444B8C;
-    font-size: 40px; 
-    line-height: 40px;
-    font-weight: 800;
-    margin-top: auto;
+  /* color: #444B8C; */
+  color:#604672;
+  font-size: 35px; 
+  line-height: 40px;
+  font-weight:800;
+  margin-top: auto;
 }
 
 .project-subheading{
-  font-size: larger; 
+  font-size: 25px;
+  color: #c8bbd3;
   line-height: 30px;
   font-weight: 700;
   margin-top: -25px;
 }
 
 .project-description-text{
-  font-size: medium;
+  font-size: 15px;
   font-weight: 500;
+  margin-top: -7px;
 }
 
 .project-tech, .project-description-heading{
-  line-height: 10px;
-  font-size: 20px;
+  line-height: 5px;
+  font-size: 19px;
+}
+.project-tech{
+  margin-bottom: -1px;
 }
 .project-technologies{
-  font-size:medium;
+  font-size:15px;
   font-weight: 500;
-  line-height: 7px;
+  line-height: 5px;
 }

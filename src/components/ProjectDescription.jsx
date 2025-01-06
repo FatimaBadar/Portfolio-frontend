@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Galleria } from "primereact/galleria";
 
@@ -129,40 +130,18 @@ const ProjectDescription = () => {
     );
   };
   return (
-    <>
+    <div style={{background:"linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%)"}}>
       {/* <h2
         className="secondary-heading"
         style={{ fontWeight: 800,  marginTop: "50px", textAlign: "center" }}
       >
         Projects
       </h2> */}
-      <div className="project-description-page">
-        {/* <ul style={{ backgroundColor: "white" }}>
-        {projectData.map((project, index) => (
-          <div key={index}>
-            <h1>{project.title}</h1>
-            {images
-              .filter((x) => x.title === project.title)
-              .map((matchingImage, i) => {
-                <li>
-                  <img
-                    key={i}
-                    src={matchingImage.fileName}
-                    alt={matchingImage.title}
-                    style={{
-                      display: "block",
-                      width: "150px",
-                      marginBottom: "10px",
-                    }}
-                  />
-                </li>;
-              })}
-          </div>
-        ))}
-      </ul> */}
+        {/* /* background: rgb(131,126,133);  */}
 
+      <div className="project-description-page">
         {projectData.map((project, index) => (
-          <div key={index} className="project-section">
+          <div key={index} className="project-section" >
             <ul className="grid project-section-grid">
               <div className="image-gallery md:col-7 sm:col-12">
                 <Galleria
@@ -212,7 +191,7 @@ const ProjectDescription = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
