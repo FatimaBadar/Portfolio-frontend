@@ -130,14 +130,17 @@ const ProjectDescription = () => {
     );
   };
   return (
-    <div style={{background:"linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%)"}}>
+    <div style={{background: "rgb(148, 167, 192)"}}> 
+    {/* <div style={{background:"linear-gradient(86deg, rgba(148,189,192,1) 0%, rgba(148,175,192,1) 100%)"}}>  */}
+
+    {/* style={{background:"linear-gradient(86deg, rgba(131,126,133,1) 0%, rgba(199,197,203,1) 100%)"}}> */}
       {/* <h2
         className="secondary-heading"
         style={{ fontWeight: 800,  marginTop: "50px", textAlign: "center" }}
       >
         Projects
       </h2> */}
-        {/* /* background: rgb(131,126,133);  */}
+        {/* /* background: rgb(128, 126, 133);  */}
 
       <div className="project-description-page">
         {projectData.map((project, index) => (
@@ -186,6 +189,13 @@ const ProjectDescription = () => {
                   )) 
                 ) : ("")}
                 </div>
+                <Button
+                  className="item inner-button-carousel"
+                  type="button"
+                  icon="pi pi-github"
+                  label="VIEW CODE"
+                  onClick={() => window.open(project.link)}
+                />
               </div>
             </ul>
           </div>

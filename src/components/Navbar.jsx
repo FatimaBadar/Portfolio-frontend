@@ -49,8 +49,23 @@ export default function Navbar() {
         {
             label: 'Projects',
             icon: 'pi pi-trophy',
-            command: () => handleNavigation('/projects'),
+            // command: () => handleNavigation('/projects'),
             visible: location.pathname === "/" || location.pathname === "/projects",
+            items: [
+                {
+                    label: 'Overview',
+                    icon: 'pi pi-eye',
+                    url: '/#projects',
+                    visible: location.pathname === "/" || location.pathname === "/projects",
+                },
+                {
+                    label: 'Detailed Projects',
+                    icon: 'pi pi-external-link',
+                    command: () => handleNavigation('/projects'),
+                    visible: location.pathname === "/" || location.pathname === "/projects",
+        
+                }
+            ],
 
         },
         {
