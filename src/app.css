@@ -357,7 +357,7 @@ body, html {
 .project-name{
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 800;
 }
 
@@ -366,7 +366,6 @@ body, html {
   margin-bottom: 0.15rem;
   font-size: 1.3rem;
   font-weight: 600;
-  height: 45px;
 }
 
 .carousel{
@@ -381,8 +380,17 @@ body, html {
   margin: 0.5rem;
   text-align: center;
   justify-items: center;
+
+  height: 72vh; /* Set a fixed height for all project cards */
+
 }
 
+
+#project-image{
+    max-height: 200px; 
+    object-fit: cover; 
+    width: auto; 
+}
 .inner-button-carousel{
   background-color: #303263;
   color: white;
@@ -393,6 +401,7 @@ body, html {
   white-space: nowrap;
   padding-left: 6vw;
   padding-right: 6vw;
+  margin-top: auto; 
 }
 
 .inner-button-carousel> .p-button-label{
