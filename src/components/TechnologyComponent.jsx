@@ -1,40 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import axios from "axios";
 
 export default function TechnologyComponent() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
-  const [webDev, setWebDev] = useState([
-    { id: 0, name: "HTML", logo: "icons/HTML.svg" },
-    { id: 1, name: "CSS", logo: "icons/CSS.svg" },
-    { id: 2, name: "Javascript", logo: "icons/Javascript.svg" },
-    { id: 3, name: "React", logo: "icons/React.svg" },
-    { id: 4, name: "Angular", logo: "icons/Angular.svg" },
-    { id: 5, name: ".NET", logo: "icons/.NET.svg" },
-  ]);
-  const [database, setDatabase] = useState([
-    { id: 0, name: "MySQL", logo: "icons/MySQL.svg" },
-    { id: 1, name: "MongoDB", logo: "icons/MongoDB.svg" },
-  ]);
-  const [programming, setProgramming] = useState([
-    { id: 0, name: "C", logo: "icons/C.svg" },
-    { id: 1, name: "C++", logo: "icons/C++.svg" },
-    { id: 2, name: "C#", logo: "icons/Csharp.svg" },
-    { id: 3, name: "Python", logo: "icons/Python.svg" },
-  ]);
-  const [dataAnalytics, setDataAnalytics] = useState([
-    { id: 0, name: "Ms Excel", logo: "icons/Excel.svg" },
-    { id: 1, name: "Power BI", logo: "icons/PowerBI.svg" },
-  ]);
-  const [design, setDesign] = useState([
-    { id: 0, name: "Figma", logo: "icons/Figma2.svg" },
-    { id: 0, name: "Lucidchart", logo: "icons/LucidChart.png" },
-    { id: 0, name: "Spline", logo: "icons/Spline.webp" },
-  ]);
-  const [cloud, setCloud] = useState([
-    { id: 0, name: "AWS", logo: "icons/AWS.svg" },
-    { id: 1, name: "Azure DevOps", logo: "icons/AzureDevops.png" },
-  ]);
+  const [webDev, setWebDev] = useState([]);
+  const [database, setDatabase] = useState([]);
+  const [programming, setProgramming] = useState([]);
+  const [dataAnalytics, setDataAnalytics] = useState([]);
+  const [design, setDesign] = useState([]);
+  const [cloud, setCloud] = useState([]);
+
+  useEffect(() => {
+    getTechnologies();
+  }, [])
+
+  const getTechnologies = async () => {
+    await axios
+    .get("http://localhost:3000/api/getTechnologies")
+    .then((response) => {
+      console.log(response.data);
+      
+      response.data.data.forEach(item => {
+        switch(item.category){
+          case "Web Development":
+            setWebDev((prev) => [...prev, item]);
+            break;
+          case "Database":
+            setDatabase((prev) => [...prev, item]);
+            break;
+          case "Programming":
+            setProgramming((prev) => [...prev, item]);
+            break;
+          case "Data Analytics":
+            setDataAnalytics((prev) => [...prev, item]);
+            break;
+          case "Design":
+            setDesign((prev) => [...prev, item]);
+            break;
+          case "Cloud":
+            setCloud((prev) => [...prev, item]);
+            break;
+          default:
+            console.warn(`Unknown category: ${item.category}`);
+        }  
+      });
+
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+  }
 
   return (
     <div className="skills" ref={ref} id="skills">
