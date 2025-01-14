@@ -93,6 +93,7 @@ const ProjectsComponent= () =>{
           <img
             src={projects.fileName}
             alt={projects.fileName}
+            id="project-image"
             className="w-11 shadow-2 border-3 border-white"
           />
         </div>
