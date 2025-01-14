@@ -6,48 +6,10 @@ import { Galleria } from "primereact/galleria";
 
 const ProjectDescription = () => {
   const [visible, setVisible] = useState(false);
-  // const [projectData, setProjectData] = useState([])
-  const [projectData, setProjectData] = useState([
-    {
-      id: 1,
-      title: "OneClicks",
-      subheading: "Multi-platform Advertising tool",
-      description: "To manage, run, optimize ad campaigns across several platforms like Meta and Google",
-      tool: "Next.js,.NET,MongoDB,PrimeReact,MaterialUI",
-      link: "https://github.com/FatimaBadar/OneClicks-frontend",
-      fileName: "projects/OneClicks.JPG"
-    },
-    {
-      id: 2,
-      title: "UniRideHub",
-      subheading: "Carpool Website",
-      description: "For drivers and riders to add up a new ride or book a ride to carpool with someone",
-      tool: "CSS,React.js,.NET,MySQL,MaterialUI",
-      link: "https://github.com/FatimaBadar/UniRideHub",
-      fileName: "projects/UniRideHub.JPG"
-    },
-    {
-      id: 3,
-      title: "Restaurant Management System",
-      subheading: "Management portal",
-      description: "To manage the menu, reservations for employers and customers",
-      tool: "CSS,React.js,MySQL,PHP",
-      link: "https://github.com/FatimaBadar/Restaurant-management",
-      fileName: "projects/Restaurant.JPG"
-    },
-    {
-      id: 4,
-      title: "Fashion Store",
-      subheading: "E-commerce system",
-      description: "To display, buy and sell fashion products by both admin or user",
-      tool: "HTML,CSS,MySQL,PHP",
-      link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
-      fileName: "projects/FashionStore.JPG"
-    }
-  ]);
+  const [projectData, setProjectData] = useState([])
   
   useEffect(() => {
-    // getProjectData();
+    getProjectData();
   }, []);
 
   const getProjectData = async () => {

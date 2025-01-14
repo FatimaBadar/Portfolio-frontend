@@ -7,40 +7,10 @@ import axios from "axios";
 const ProjectsComponent= () =>{
   const { ref: ProjectRef, inView } = useInView();
     // {threshold: 0.1, triggerOnce: true });
-  // const [projectData, setProjectData] = useState([]);
-  const [projectData, setProjectData] = useState([
-    {
-      id: "1",
-      title: "OneClicks",
-      subheading: "Multi-platform Adverstising Management tool",
-      fileName: "projects/OneClicks.JPG",
-      link: "https://github.com/FatimaBadar/OneClicks-frontend",
-    },
-    {
-      id: "2",
-      title: "UniRideHub",
-      subheading: "Carpooling Website",
-      fileName: "projects/UniRideHub.JPG",
-      link: "https://github.com/FatimaBadar/UniRideHub",
-    },
-    {
-      id: "3",
-      title: "Restaurant",
-      subheading: "Restaurant Management portal",
-      fileName: "projects/Restaurant.JPG",
-      link: "https://github.com/FatimaBadar/Restaurant-management",
-    },
-    {
-      id: "4",
-      title: "Fashion Store",
-      subheading: "E-Commerce website",
-      fileName: "projects/FashionStore.JPG",
-      link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
-    },
-  ]);
+  const [projectData, setProjectData] = useState([]);
 
   useEffect(() => {
-    // getProjectData();
+    getProjectData();
   }, []);
 
   const getProjectData = async () => {
