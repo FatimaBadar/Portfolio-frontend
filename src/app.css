@@ -5,6 +5,10 @@ body, html {
   scroll-behavior: smooth;
 }
 
+.p-toast{
+  margin-top: 32px;
+}
+
 /*#region Navbar */
 /* initial values  */
 .navbar-card{
@@ -16,7 +20,7 @@ body, html {
 
 .p-menubar{
   top: 0;
-  z-index: 1000; 
+  z-index: 11; 
   width: 100%;  
   border-color: transparent;
   position: relative;

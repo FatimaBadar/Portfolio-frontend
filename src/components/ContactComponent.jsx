@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Card } from "primereact/card";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
+import { Toast } from 'primereact/toast';
 import axios from "axios";
 import { useInView } from "react-intersection-observer";
 
 export default function ContactComponent() {
   const { ref, inView } = useInView({threshold: 0.2, triggerOnce: true });
+  const toast = useRef(null);
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -27,14 +29,25 @@ export default function ContactComponent() {
       .post("http://localhost:3000/api/contactMe", {EmailPayload})
       .then((response) => {
         console.log("Done", response.data);
+        showSuccess()
       })
       .catch((error) => {
         console.log(error.message);
+        showError(error.message);
       });
   };
+ 
+  const showSuccess = () => {
+    toast.current.show({severity:'success', summary: 'Success', detail: "Email sent successfully", life: 3000});
+  }
+
+  const showError = (message) => {
+    toast.current.show({severity:'error', summary: 'Error', detail: message, life: 3000});
+  }
 
   return (
     <div ref={ref} id="contact">
+      <Toast ref={toast}/>
       <div className={`grid ${inView ? 'about-visible' : 'about-hidden'}`}>
         <div className="about-item col-6 left">
           <h2
