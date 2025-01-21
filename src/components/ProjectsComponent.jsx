@@ -8,6 +8,7 @@ const ProjectsComponent= () =>{
   const { ref: ProjectRef, inView } = useInView();
     // {threshold: 0.1, triggerOnce: true });
   const [projectData, setProjectData] = useState([]);
+  const server = import.meta.SERVER_URL || "http://localhost:3000";
 
   useEffect(() => {
     getProjectData();
@@ -15,7 +16,7 @@ const ProjectsComponent= () =>{
 
   const getProjectData = async () => {
     await axios
-      .get("http://localhost:3000/api/getProjects")
+      .get(`${server}/api/getProjects`)
       .then((response) => {
         console.log(response.data);
         setProjectData(response.data.data);

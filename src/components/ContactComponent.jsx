@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 export default function ContactComponent() {
   const { ref, inView } = useInView({threshold: 0.2, triggerOnce: true });
   const toast = useRef(null);
+  const server = import.meta.SERVER_URL || "http://localhost:3000";
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -26,7 +27,7 @@ export default function ContactComponent() {
     };
 
     await axios
-      .post("http://localhost:3000/api/contactMe", {EmailPayload})
+      .post(`${server}/api/contactMe`, {EmailPayload})
       .then((response) => {
         console.log("Done", response.data);
         showSuccess()

@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function TechnologyComponent() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const server = import.meta.SERVER_URL || "http://localhost:3000";
 
   const [webDev, setWebDev] = useState([]);
   const [database, setDatabase] = useState([]);
@@ -18,7 +19,7 @@ export default function TechnologyComponent() {
 
   const getTechnologies = async () => {
     await axios
-    .get("http://localhost:3000/api/getTechnologies")
+    .get(`${server}/api/getTechnologies`)
     .then((response) => {
       console.log(response.data);
       

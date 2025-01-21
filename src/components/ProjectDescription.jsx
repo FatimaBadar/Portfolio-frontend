@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { Galleria } from "primereact/galleria";
 
 const ProjectDescription = () => {
   const [visible, setVisible] = useState(false);
   const [projectData, setProjectData] = useState([])
-  
+  const server = import.meta.SERVER_URL || "http://localhost:3000";
+
   useEffect(() => {
     getProjectData();
   }, []);
 
   const getProjectData = async () => {
     await axios
-      .get("http://localhost:3000/api/getProjects")
+      .get(`${server}/api/getProjects`)
       .then((response) => {
         setProjectData(response.data.data);
       })
