@@ -1,27 +1,64 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+// import axios from "axios";
 import { Button } from "primereact/button";
 import { Galleria } from "primereact/galleria";
 
 const ProjectDescription = () => {
-  const [visible, setVisible] = useState(false);
-  const [projectData, setProjectData] = useState([])
-  const server = import.meta.SERVER_URL || "http://localhost:3000";
+  // const [projectData, setProjectData] = useState([])
+  const [projectData, setProjectData] = useState([
+    {
+      id: 1,
+      title: "OneClicks",
+      subheading: "Multi-platform Advertising tool",
+      description: "An advertising campaign optimization tool that integrates platforms like Facebook and Google to streamline campaign management. The tool provides a user-friendly interface, efficient data handling, and unifies campaign tracking across multiple platforms.",
+      tool: "Next.js,.NET,MongoDB,PrimeReact,MaterialUI",
+      link: "https://github.com/FatimaBadar/OneClicks-frontend",
+      fileName: "projects/OneClicks.JPG"
+    },
+    {
+      id: 2,
+      title: "UniRideHub",
+      subheading: "Carpool Website",
+      description: "A user-friendly carpooling platform using Entity Framework for efficient data management. The platform utilized the MVC architecture to improve system organization, offering a seamless, role-based experience tailored to both drivers and riders. It allowed drivers to add new rides and riders to book rides, facilitating a convenient carpooling experience. By optimizing data flow and role functionality, the platform enhanced user engagement and overall system efficiency.",
+      tool: "CSS,React.js,.NET,MySQL,MaterialUI",
+      link: "https://github.com/FatimaBadar/UniRideHub",
+      fileName: "projects/UniRideHub.JPG"
+    },
+    {
+      id: 3,
+      title: "Restaurant Management System",
+      subheading: "Management portal",
+      description: "A comprehensive restaurant management system designed to streamline workflows and operations. The platform efficiently manages menus, orders, reservations, employee scheduling, inventory, and customer information. By providing a centralized and intuitive system, it enhances functionality and user experience for both customers and staff, ensuring smoother operations and improved overall efficiency.",
+      tool: "CSS,React.js,MySQL,PHP",
+      link: "https://github.com/FatimaBadar/Restaurant-management",
+      fileName: "projects/Restaurant.JPG"
+    },
+    {
+      id: 4,
+      title: "Fashion Store",
+      subheading: "E-commerce system",
+      description: "An online fashion store with a visually appealing UI. The platform provided a seamless shopping experience, featuring user-friendly navigation for customers and comprehensive admin control for managing products and orders. It allowed both admins and users to display, buy, and sell fashion products efficiently. Scalability and efficiency were key priorities, supported by detailed Software Requirements Specification (SRS) and Software Design Specification (SDS) documentation to ensure effective project development.",
+      tool: "HTML,CSS,MySQL,PHP",
+      link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
+      fileName: "projects/FashionStore.JPG"
+    }
+  ]);
+  // const server = import.meta.SERVER_URL || "http://localhost:3000";
 
-  useEffect(() => {
-    getProjectData();
-  }, []);
+  // useEffect(() => {
+  //   getProjectData();
+  // }, []);
 
-  const getProjectData = async () => {
-    await axios
-      .get(`${server}/api/getProjects`)
-      .then((response) => {
-        setProjectData(response.data.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  // const getProjectData = async () => {
+  //   await axios
+  //     .get(`${server}/api/getProjects`)
+  //     .then((response) => {
+  //       setProjectData(response.data.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
 
   const [images, setImages] = useState([
     {

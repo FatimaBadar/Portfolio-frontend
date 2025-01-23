@@ -1,31 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Button } from "primereact/button";
 import { Carousel } from "primereact/carousel";
-import axios from "axios";
+// import axios from "axios";
 
 const ProjectsComponent= () =>{
   const { ref: ProjectRef, inView } = useInView();
     // {threshold: 0.1, triggerOnce: true });
-  const [projectData, setProjectData] = useState([]);
-  const server = import.meta.SERVER_URL || "http://localhost:3000";
+  // const [projectData, setProjectData] = useState([]);
+  const [projectData, setProjectData] = useState([
+    {
+      id: "1",
+      title: "OneClicks",
+      subheading: "Multi-platform Adverstising Management tool",
+      fileName: "projects/OneClicks.JPG",
+      link: "https://github.com/FatimaBadar/OneClicks-frontend",
+    },
+    {
+      id: "2",
+      title: "UniRideHub",
+      subheading: "Carpooling Website",
+      fileName: "projects/UniRideHub.JPG",
+      link: "https://github.com/FatimaBadar/UniRideHub",
+    },
+    {
+      id: "3",
+      title: "Restaurant",
+      subheading: "Restaurant Management portal",
+      fileName: "projects/Restaurant.JPG",
+      link: "https://github.com/FatimaBadar/Restaurant-management",
+    },
+    {
+      id: "4",
+      title: "Fashion Store",
+      subheading: "E-Commerce website",
+      fileName: "projects/FashionStore.JPG",
+      link: "https://github.com/FatimaBadar/E-Commerce-Fashion-Store",
+    },
+  ]);
+  // const server = import.meta.SERVER_URL || "http://localhost:3000";
 
-  useEffect(() => {
-    getProjectData();
-  }, []);
+  // useEffect(() => {
+  //   getProjectData();
+  // }, []);
 
-  const getProjectData = async () => {
-    await axios
-      .get(`${server}/api/getProjects`)
-      .then((response) => {
-        console.log(response.data);
-        setProjectData(response.data.data);
-        console.log("project data: ", projectData);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  // const getProjectData = async () => {
+  //   await axios
+  //     .get(`${server}/api/getProjects`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       setProjectData(response.data.data);
+  //       console.log("project data: ", projectData);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.message);
+  //     });
+  // };
 
   const responsiveOptions = [
     {
