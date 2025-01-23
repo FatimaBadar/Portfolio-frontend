@@ -54,6 +54,66 @@ const ProjectDescription = () => {
       title: "UniRideHub",
       fileName: "projects/UniRideHub/Goal2.JPG",
     },
+    {
+      id: "7",
+      title: "Restaurant Management System",
+      fileName: "projects/Restaurant.JPG",
+    },
+    {
+      id: "8",
+      title: "Restaurant Management System",
+      fileName: "projects/Restaurant Management System/Main.JPG",
+    },
+    {
+      id: "9",
+      title: "Restaurant Management System",
+      fileName: "projects/Restaurant Management System/Welcome.JPG",
+    },
+    {
+      id: "10",
+      title: "Restaurant Management System",
+      fileName: "projects/Restaurant Management System/Menu.JPG",
+    },
+    {
+      id: "11",
+      title: "Restaurant Management System",
+      fileName: "projects/Restaurant Management System/Reservation.JPG",
+    },
+    {
+      id: "12",
+      title: "Fashion Store",
+      fileName: "projects/FashionStore.JPG",
+    },
+    {
+      id: "13",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Overview.JPG",
+    },
+    {
+      id: "14",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Register.JPG",
+    },
+    {
+      id: "15",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Login.JPG",
+    },
+    {
+      id: "16",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Product.JPG",
+    },
+    {
+      id: "17",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Add Product.JPG",
+    },
+    {
+      id: "18",
+      title: "Fashion Store",
+      fileName: "projects/Fashion Store/Delete Product.JPG",
+    },
   ]);
   const responsiveOptions = [
     {
