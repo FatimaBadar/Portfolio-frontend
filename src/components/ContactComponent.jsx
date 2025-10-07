@@ -6,11 +6,12 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { Toast } from 'primereact/toast';
 import axios from "axios";
 import { useInView } from "react-intersection-observer";
+const server = import.meta.env.VITE_SERVER_URL;
+
 
 export default function ContactComponent() {
   const { ref, inView } = useInView({threshold: 0.2, triggerOnce: true });
   const toast = useRef(null);
-  const server = import.meta.SERVER_URL || "http://localhost:3000";
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
